@@ -8,7 +8,11 @@ var bookshelf = require('./db.js');
 
 // TODO: Load Models
 
-// TODO: Load Controllers
+// Here we try to load a user if the session exists
+app.use(require('./middlewares/user'));
+
+//And then we give control over to our controllers!
+app.use(require('./controllers/'));
 
 var server = app.listen(3000, function() {
     var host = server.address().address;

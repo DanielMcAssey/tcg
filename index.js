@@ -1,10 +1,12 @@
 var express = require('express');
 var app = express();
 
+// We initialize Bookshelf
+var bookshelf = require('./db.js');
 
-app.get('/', function(req, res) {
-    res.send('Hello World!');
-});
+// TODO: Load Models
+
+// TODO: Load Controllers
 
 var server = app.listen(3000, function() {
     var host = server.address().address;

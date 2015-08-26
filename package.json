@@ -1,0 +1,31 @@
+{
+  "name": "tcg",
+  "version": "0.0.1",
+  "description": "A Trading Card Game meant for the GameJam of September 2014 organized on /r/GameDev1",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheNeikos/tcg.git"
+  },
+  "author": [
+    "Glokon",
+    "Joesv",
+    "Neikos <neikos@neikos.email>",
+    "Evan"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheNeikos/tcg/issues"
+  },
+  "homepage": "https://github.com/TheNeikos/tcg#readme"
+}

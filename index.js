@@ -1,6 +1,8 @@
 var express = require('express');
 var app = express();
 
+app.set('view engine', 'ejs');
+
 // We initialize Bookshelf
 var bookshelf = require('./db.js');
 

@@ -7,6 +7,8 @@
     "test": "tests"
   },
   "dependencies": {
+    "bcrypt": "^0.8.5",
+    "bluebird": "^2.9.34",
     "bookshelf": "^0.8.2",
     "ejs": "^2.3.3",
     "express": "^4.13.3",

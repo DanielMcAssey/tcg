@@ -5,6 +5,7 @@ var passwordHashLen = 12;
 
 var User = bookshelf.Model.extend({
     tableName: 'users',
+    idAttribute: 'id',
     initialize: function() {
         this.on('saving', this.validateSave);
     },
@@ -13,13 +14,10 @@ var User = bookshelf.Model.extend({
         return false;
     },
 }, {
-	login: Promise.method(function(email, password) {
+    login: Promise.method(function(email, password) {
         if (!email || !password) throw new Error('Email and password are both required');
-        var userToLogin = new this({email: email.toLowerCase().trim()}).fetch({require: true}).tap(function(user) {
-            bcrypt.compare(password, user.get('password'), function(err, res) {
-                if(!res) throw new Error('Email and/or Password is incorrect.');
-                return userToLogin;
-            });
+        return new this({email: email.toLowerCase().trim()}).fetch({require: true}).tap(function(user) {
+            return bcrypt.compareAsync(user.get('password'), password);
         });
     }),
     register: Promise.method(function(name, email, password, password_confirm)
